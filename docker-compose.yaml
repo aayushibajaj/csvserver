@@ -7,4 +7,13 @@ services:
     volumes:
       - /opt/csvserver/inputdata:/csvserver/inputdata
     environment:
-      CSVSERVER_BORDER: Orange
+      CSVSERVER_BORDER: Orang  
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    ports:
+       - "9090:9090"
+   volumes:
+     - /tmp/prometheus.yml:/etc/prometheus/prometheus.yml
+   links:
+     - "csvserver:csvserver"
+
