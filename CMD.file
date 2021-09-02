@@ -1,0 +1,83 @@
+login as: root
+root@192.168.224.113's password:
+Last login: Sun Aug 22 21:58:27 2021 from 192.168.65.1
+[root@localhost ~]# docker ps
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@localhost ~]# docker version
+Client:
+ Version:         1.13.1
+ API version:     1.26
+ Package version:
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@localhost ~]# systemctl start docker
+[root@localhost ~]# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Mon 2021-08-23 03:14:55 EDT; 7s ago
+     Docs: http://docs.docker.com
+ Main PID: 2490 (dockerd-current)
+   CGroup: /system.slice/docker.service
+           ├─2490 /usr/bin/dockerd-current --add-runtime docker-runc=/usr/libexec/docker/docker-runc-current --default-runtime=docker-runc --exec-opt nati...
+           └─2498 /usr/bin/docker-containerd-current -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2...
+
+Aug 23 03:14:49 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:49.077762845-04:00" level=info msg="libcontainerd: new containe...: 2498"
+Aug 23 03:14:50 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:50.859239992-04:00" level=info msg="Graph migration to content-...econds"
+Aug 23 03:14:50 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:50.863558476-04:00" level=info msg="Loading containers: start."
+Aug 23 03:14:51 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:51.281710367-04:00" level=info msg="Firewalld running: true"
+Aug 23 03:14:54 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:54.252993952-04:00" level=info msg="Default bridge (docker0) is...ddress"
+Aug 23 03:14:55 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:55.096562477-04:00" level=info msg="Loading containers: done."
+Aug 23 03:14:55 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:55.538442471-04:00" level=info msg="Daemon has completed initialization"
+Aug 23 03:14:55 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:55.538495559-04:00" level=info msg="Docker daemon" commit="7d71...=1.13.1
+Aug 23 03:14:55 localhost.localdomain dockerd-current[2490]: time="2021-08-23T03:14:55.561988678-04:00" level=info msg="API listen on /var/run/docker.sock"
+Aug 23 03:14:55 localhost.localdomain systemd[1]: Started Docker Application Container Engine.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@localhost ~]# git clone https://github.com/infracloudio/csvserver.git
+fatal: destination path 'csvserver' already exists and is not an empty directory.
+[root@localhost ~]# cd csvserver/
+[root@localhost csvserver]# ll
+
+total 8
+-rw-r--r--. 1 root root 7526 Aug 20 14:51 README.md
+drwxr-xr-x. 2 root root   22 Aug 20 14:51 solution
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]# git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> mysolution
+
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]#
+[root@localhost csvserver]# cd solution/
+[root@localhost solution]# ll
+total 0
+[root@localhost solution]#
+[root@localhost solution]#
+[root@localhost solution]#
+[root@localhost solution]#
+[root@localhost solution]# docker pull infracloudio/csvserver:latest
+Trying to pull repository docker.io/infracloudio/csvserver ...
+latest: Pulling from docker.io/infracloudio/csvserver
+ae43b40a9945: Pull complete
+7bb33bb2db38: Pull complete
+c82d72e1bb76: Pull complete
+Digest: sha256:20bc5a93fac217270fe5c88d639d82c6ecb18fc908283e046d9a3917a840ec1f
+Status: Downloaded newer image for docker.io/infracloudio/csvserver:latest
+[root@localhost solution]#
+
